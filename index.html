@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <title> DWES | Práctica 4 </title>
+    </head>
+    <body>
+        <div class="container pt-3 pb-3 text-center">
+            <button type="button" id="mostrar-tabla" class="btn btn-primary ms-2"> Mostrar Todo </button>
+            <button type="button" id="filtro-1" class="btn btn-primary ms-2"> Filtro 1 </button>
+            <button type="button" id="filtro-2" class="btn btn-primary ms-2"> Filtro 2 </button>
+            <button type="button" id="filtro-3" class="btn btn-primary ms-2"> Filtro 3 </button>
+            <button type="button" id="filtro-4" class="btn btn-primary ms-2"> Filtro 4 </button>
+        </div>
+
+        <div id="mensaje" class="pt-2 pb-2"></div>
+        <div id="tabla"></div>
+
+        <form action="" method="post">
+            <div class="container">
+                <h1> Crea tu personaje </h1>
+                <p> Rellena este formulario con los datos de tu personaje. </p>
+
+                <hr>
+
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label for="imagenForm"><b> Imagen </b></label>
+                        <input type="url" class="form-control" placeholder="Url de la imagen de tu personaje" id="imagenForm">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="nombreForm"><b> Nombre </b></label>
+                        <input type="text" class="form-control" placeholder="Nombre de tu personaje" id="nombreForm" required>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="especieForm"><b> Especie </b></label>
+                        <input type="text" class="form-control" placeholder="Especie de tu personaje" id="especieForm" required>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="generoForm"><b> Género </b></label>
+                        <select class="form-control" id="generoForm">
+                            <option> male </option>
+                            <option> female </option>
+                            <option> non-binary </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="casaForm"><b> Casa </b></label>
+                        <select class="form-control" id="casaForm">
+                            <option> Gryffindor </option>
+                            <option> Slytherin </option>
+                            <option> Hufflepuff </option>
+                            <option> Ravenclaw </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="anioForm"><b> Año de nacimiento </b></label>
+                        <input type="number" class="form-control" placeholder="Año de nacimiento de tu personaje" id="anioForm" required>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="ascendenciaForm"><b> Ascendencia </b></label>
+                        <input type="text" class="form-control" placeholder="Ascendencia de tu personaje" id="ascendenciaForm">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="ojosForm"><b> Ojos </b></label>
+                        <input type="text" class="form-control" placeholder="Color de ojos de tu personaje" id="ojosForm">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="peloForm"><b> Pelo </b></label>
+                        <input type="text" class="form-control" placeholder="Color de pelo de tu personaje" id="peloForm">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="patronusForm"><b> Patronus </b></label>
+                        <input type="text" class="form-control" placeholder="Patronus de tu personaje" id="patronusForm">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="estudianteForm"><b> ¿Estudia en Hogwarts? </b></label>
+                        <input type="checkbox" class="form-check-input" data-val="false" id="estudianteForm">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="trabajadorForm"><b> ¿Trabaja en Hogwarts? </b></label>
+                        <input type="checkbox" class="form-check-input" data-val="true" id="trabajadorForm">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <h4> Varita </h4>
+                        <div class="form-group col-12">
+                            <label for="varitaMaterialForm"><b> Material </b></label>
+                            <input type="text" class="form-control" placeholder="Material de la varita de tu personaje" id="varitaMaterialForm">
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="varitaNucleoForm"><b> Núcleo </b></label>
+                            <input type="text" class="form-control" placeholder="Núcleo de la varita de tu personaje" id="varitaNucleoForm">
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="varitaLongitudForm"><b> Longitud </b></label>
+                            <input type="number" class="form-control" placeholder="Longitud de la varita de tu personaje" id="varitaLongitudForm">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="actorForm"><b> Actor </b></label>
+                        <input type="text" class="form-control" placeholder="Actor de tu personaje" id="actorForm">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="vivoForm"><b> ¿Está vivo? </b></label>
+                        <input type="checkbox" class="form-check-input" data-val="true" id="vivoForm" checked>
+                    </div>
+                </div>
+
+                <button type="submit" id="crear"> Crear </button>
+                <button type="reset"> Restablecer </button>
+            </div>
+        </form>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="client.js"></script>
+    </body>
+</html>
